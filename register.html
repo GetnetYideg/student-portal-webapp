@@ -5,18 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Portal</title>
 </head>
-<body>
+
+<body >
         <form action="">
+        
         <fieldset>
-            <legend >Welcome To LogIn Page</legend>
-            <label for="email">Email</label><br><br>
-            <input type="email" name="email" id="email"><br><br>
+            <label for="email" >Email</label><br><br>
+            <input type="email" name="email" id="email" required maxlength="20" minlength="6"><br><br>
             <label for="password">Password</label><br><br>
-            <input type="password"  id="password" name="password"><br><br>
+            <input type="password"  id="password" name="password" minlength="6" required><br><br>
             <label for="password">Confirm Password</label><br><br>
-            <input type="password"  id="password" name="password"><br><br>
+            <input type="password"  id="password" name="password" minlength="6" required><br><br>
             <button >SignUp</button><br>
          <p>already have an account <a href="login.html"> LogIn</a></p>
+         </fieldset>
     </form>
 </body>
 </html>

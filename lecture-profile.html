@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AASTU Student Portal - Instructor Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        /* Navbar */
+        header {
+            background: white;
+            padding: 15px 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            height: 70px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: #f1f5f9;
+        }
+
+        nav a.active {
+            background: #e67e22;
+            color: white;
+        }
+
+        /* Profile Header */
+        .profile-header {
+            background: linear-gradient(135deg, #0f2b5e 0%, #1a3c7a 100%);
+            color: white;
+            padding: 60px 5%;
+            text-align: center;
+        }
+
+        .profile-header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .avatar {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: #e67e22;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: white;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .profile-info h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .profile-info p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin: 8px 0;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 5%;
+        }
+
+        .section-title {
+            color: #0f2b5e;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #e67e22;
+            display: inline-block;
+            padding-bottom: 8px;
+        }
+
+        .profile-sections {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 35px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            background: #0f2b5e;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 1.3rem;
+            margin: -35px -35px 25px -35px;
+            text-align: center;
+        }
+
+        .info-item {
+            display: flex;
+            margin: 18px 0;
+            font-size: 1.05rem;
+        }
+
+        .info-item strong {
+            min-width: 140px;
+            color: #0f2b5e;
+        }
+
+        /* Settings Section */
+        .settings-section {
+            margin-top: 60px;
+        }
+
+        .settings-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .setting-item {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .setting-item i {
+            font-size: 2.2rem;
+            color: #0f2b5e;
+            margin-bottom: 15px;
+        }
+
+        .setting-item p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn:hover {
+            background: #d35400;
+            transform: translateY(-3px);
+        }
+
+        .email-setting {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background: #0f2b5e;
+            color: white;
+            padding: 70px 5% 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            margin: 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .contact-item i {
+            margin-right: 12px;
+        }
+
+        .footer-logo {
+            height: 90px;
+            margin: 30px 0;
+        }
+
+        @media (max-width: 900px) {
+            .profile-sections {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-header-content {
+                flex-direction: column;
+            }
+
+            .profile-header {
+                padding: 50px 5%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-container">
+        <img src="images/AASTU-LOGO.png" alt="AASTU Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="lecture-dashboard.html">Dash Board</a></li>
+                <li><a href="lecture-anouncement.html">Announcement</a></li>
+                <li><a href="submit-grade.html">Submit Grade</a></li>
+                <li><a href="#" class="active">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="profile-header">
+    <div class="profile-header-content">
+        <div class="avatar">
+            <i class="fas fa-user-tie"></i>
+        </div>
+        <div class="profile-info">
+            <h2>Fedlu Yalew</h2>
+            <p><strong>ID:</strong> ETSO567/16</p>
+            <p><strong>Department:</strong> Software Engineering</p>
+        </div>
+    </div>
+</section>
+
+<div class="main-content">
+    <h2 class="section-title">Profile</h2>
+
+    <div class="profile-sections">
+        <div class="card">
+            <h3>Personal Info</h3>
+            <div class="info-item"><strong>Email:</strong> fedluayalew@gmail.com</div>
+            <div class="info-item"><strong>Phone:</strong> 0905338431</div>
+            <div class="info-item"><strong>Gender:</strong> Male</div>
+            <div class="info-item"><strong>Bio:</strong> Some text just to hold a place for the instructor's bio.</div>
+        </div>
+
+        <div class="card">
+            <h3>Academic Info</h3>
+            <div class="info-item"><strong>Instructor ID:</strong> FAJ0544/16</div>
+            <div class="info-item"><strong>Department:</strong> Software Engineering</div>
+        </div>
+    </div>
+
+    <div class="settings-section">
+        <h2 class="section-title">Settings</h2>
+        <div class="settings-grid">
+            <div class="setting-item">
+                <i class="fas fa-user"></i>
+                <p>User name: Fedlu Ayalewe</p>
+                <a href="#" class="btn">Change Username</a>
+            </div>
+
+            <div class="setting-item">
+                <i class="fas fa-lock"></i>
+                <p>Password: ********</p>
+                <a href="#" class="btn">Change Password</a>
+            </div>
+        </div>
+
+        <div class="email-setting">
+            <i class="fas fa-envelope" style="font-size: 2.2rem; color: #0f2b5e; margin-bottom: 15px;"></i>
+            <p>Email: fedluayalew@gmail.com</p>
+            <a href="#" class="btn">Change Email</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-content">
+        <h3>Contact us</h3>
+        <div class="contact-item"><i class="fas fa-phone"></i> +251 987 536 423</div>
+        <div class="contact-item"><i class="fas fa-envelope"></i> aastu@gmail.com</div>
+
+        <img src="images/AASTU-LOGO.png" alt="AASTU Logo" class="footer-logo">
+
+        <div style="margin-top: 40px; opacity: 0.8; font-size: 0.95rem;">
+            © 2025 Student Portal. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

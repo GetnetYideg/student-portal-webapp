@@ -1,60 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AASTU Student Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img class="logo-img" src="images/company-logo.png" width="150px" alt="Company logo">
+
+<header>
+    <div class="nav-container">
+        <img src="images/AASTU-LOGO.png" alt="AASTU" class="logo">
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h1>Your Academic Life, Organized in One Place</h1>
+        <p>Access courses, grades, schedules, and announcements—all from a single, easy-to-use student portal designed to keep you on track.</p>
+
+        <div style="margin: 40px 0;">
+            <span class="slider-arrows"><</span>
+            <a href="#" class="read-more-btn">READ MORE</a>
+            <span class="slider-arrows">></span>
         </div>
-        <div class="nav-container">
-            <a href="home.html" class="home-nav">Home</a>
-            <a href="#about" class="about-nav">About Us</a>
-            <a href="login.html" class="login-nav">Login</a>
+
+        <div style="margin-top: 30px; font-size: 2.2rem; opacity: 0.7;">
+            • • •
         </div>
-    </header>
-    <main>
-        <section id="about">
-            <h2 class="about-header">About Us</h2>
-            <div class="about-container">
-                <div class="about-text-container">
-                    <p class="about-text">We are a team of dedicated students working together to create a smart and user-friendly Student Portal. Each of us brings unique skills in design, development, and problem-solving. Our goal is to build a platform that makes campus life easier, more organized, and more connected for every student.</p>
-                </div>
-                <div class="about-image-container">
-                    <img src="images/student-image.png" height="240px" alt="" class="about-image">
-                </div>
-            </div>
-        </section>
-        <section id="feature">
-            <h2 class="feature-header">Key Features</h2>
-            <div class="feature-container">
-                <div>
-                    <h3>Course Management</h3>
-                    <p>Students can view and manage their courses, from Biology to Computer Science, all within the portal. The easy-to-navigate dashboard allows for quick access to course content and assignments.</p>
-                </div>
-                <div>
-                    <h3>Gradebook Access</h3>
-                    <p>Students can instantly view their grades and performance metrics, helping them to identify areas for improvement and celebrate their successes.</p>
-                </div>
-                <div>
-                    <h3>Anouncement Access</h3>
-                    <p>Students can instantly view the new anouncements and class related newses helping them to get information early and to be ready for ready for those new things</p>
-                </div>
-            </div>
-        </section>
-        <section id="contact">
-            <div class="contact-header-container">
-                <h2 class="contact-header">Contact</h2>
-                <img class="logo" src="images/company-logo.png" width="150px" alt="Company logo">
-            </div>
-            <div class="contact-detail">
-                <label><img src="images/phone-icon.png" height="70px" alt="Phone icon"></label><tel>+251900000000</tel><br>
-                <label><img src="images/emai-icon.png" height="70px" alt="Email icon"></label><email>getnetyideg54@gmain.com</email>
-            </div>
-        </section>
-    </main>
+    </div>
+</section>
+
+<section class="what-section">
+    <div class="what-content">
+        <div class="what-text">
+            <h2>What does this platform do?<br><small>For students...</small></h2>
+            <p>The portal will help students get quick access to marks and announcements in one place, reducing missed info and confusion.</p>
+            <a href="#" class="read-more-btn" style="margin-top: 30px;">READ MORE</a>
+        </div>
+        <div class="illustration">
+            <img src="images/image copy.png" alt="Students working together">
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2 class="section-title">Features</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <h3>Centralized Academic Dashboard</h3>
+            <p>View grades, course details, and announcements in one organized dashboard without switching between multiple platforms.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Real-Time Announcements</h3>
+            <p>Receive important academic updates instantly, ensuring you never miss deadlines, exams, or course changes.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Secure Grade Management</h3>
+            <p>Instructors can publish grades safely, and students can access their results privately and accurately at any time.</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-content">
+        <h3>Contact us</h3>
+        <div class="contact-info">
+            <div class="contact-item"><i class="fas fa-phone"></i> +251 987 536 423</div>
+            <div class="contact-item"><i class="fas fa-envelope"></i> aastu@gmail.com</div>
+        </div>
+
+        <img src="images/AASTU-LOGO.png" alt="AASTU Logo" class="footer-logo">
+
+        <div class="copyright">
+            © 2025 Student Portal. All rights reserved.
+        </div>
+    </div>
+</footer>
+
 </body>
 </html>

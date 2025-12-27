@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>AASTU Student Portal - Dashboard</title>
+    <title>AASTU Student Portal - Instructor Dashboard</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="styles/dashboard.css">
+    <link rel="stylesheet" href="styles/lecture-dashboard.css">
 </head>
 <body>
 
@@ -15,9 +15,8 @@
         <nav>
             <ul>
                 <li><a href="#" class="active">Dash Board</a></li>
-                <li><a href="anouncement.html">Announcement</a></li>
-                <li><a href="course.html">Course</a></li>
-                <li><a href="grade.html">Grade</a></li>
+                <li><a href="lecture-anouncement.html">Announcement</a></li>
+                <li><a href="submit-grade.html">Submit Grade</a></li>
                 <li><a href="lecture-profile.html">Profile</a></li>
             </ul>
         </nav>
@@ -27,11 +26,11 @@
 <section class="welcome-header">
     <div class="welcome-content">
         <div class="avatar">
-            <img class="profile-image" src="images/Avatar.png" alt="Profile Picture">
+            <i class="fas fa-user-tie"></i>
         </div>
         <div class="welcome-text">
-            <h1>WELCOME BACK,<br>Fahmi</h1>
-            <p>ID: ETSO567/16</p>
+            <h1>WELCOME BACK,<br>Fedlu</h1>
+            <p>ID: ETSO5678/03</p>
             <p>DEPARTMENT: Software</p>
         </div>
     </div>
@@ -39,40 +38,36 @@
 
 <div class="dashboard-content">
     <div class="grid-container">
-        
+
         <div class="dashboard-card">
             <div class="card-header">Courses</div>
             <div class="card-body">
                 <div class="course-item">
-                    <p><strong>SAM</strong></p>
-                    <p class="instructor">By: Miss Lelise</p>
+                    <p><strong>Department:</strong> Software</p>
+                    <p><strong>Course name:</strong> FOP</p>
+                    <p><strong>Course ID:</strong> SWEG432</p>
                 </div>
                 <div class="course-item">
-                    <p><strong>DSA</strong></p>
-                    <p class="instructor">By: Mr Fedlu</p>
+                    <p><strong>Department:</strong> Software</p>
+                    <p><strong>Course name:</strong> DSA</p>
+                    <p><strong>Course ID:</strong> SWEG652</p>
                 </div>
             </div>
             <a href="#" class="see-more">SEE MORE</a>
         </div>
-        
+
         <div class="dashboard-card">
-            <div class="card-header">Latest Grades</div>
+            <div class="card-header">Recent Submission</div>
             <div class="card-body">
-                <div class="grade-item">
-                    <p><strong>Course:</strong> SAM</p>
-                    <p class="grade-label">Grade: A+</p>
+                <div class="submission-item">
+                    <p><strong>Department:</strong> Software</p>
+                    <p><strong>Year:</strong> 3rd</p>
+                    <p><strong>Section:</strong> B</p>
                 </div>
-                <div class="grade-item">
-                    <p><strong>Course:</strong> DSA</p>
-                    <p class="grade-label">Grade: Z-</p>
-                </div>
-                <div class="grade-item">
-                    <p><strong>Course:</strong> COA</p>
-                    <p class="grade-label">Grade: S+</p>
-                </div>
-                <div class="grade-item">
-                    <p><strong>Course:</strong> DSA</p>
-                    <p class="grade-label">Grade: Z-</p>
+                <div class="submission-item">
+                    <p><strong>Department:</strong> Software</p>
+                    <p><strong>Year:</strong> 3rd</p>
+                    <p><strong>Section:</strong> A</p>
                 </div>
             </div>
             <a href="#" class="see-more">SEE MORE</a>

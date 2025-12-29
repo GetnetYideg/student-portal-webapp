@@ -6,6 +6,7 @@
     <title>AASTU Student Portal</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/shared.css">
 </head>
 <body>
 
@@ -16,7 +17,13 @@
             <ul>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">LOGIN</a>
+                    <div class="dropdown-content">
+                        <a href="login.html">As Student</a>
+                        <a href="lecture-login.html">As Instructor</a>
+                    </div>
+                </li>
             </ul>
         </nav>
     </div>
@@ -52,7 +59,7 @@
     </div>
 </section>
 
-<section>
+<section class="feuture-container">
     <h2 class="section-title">Features</h2>
     <div class="features-grid">
         <div class="feature-card">

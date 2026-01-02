@@ -1,0 +1,183 @@
+:root{
+    --gold-color: #D4AF37;
+    --text-white: white;
+    --back-white: white;
+    --dark-blue: linear-gradient(135deg, #0f2b5e 0%, #1a3c7a 100%);
+}
+
+.welcome-header {
+    background: var(--dark-blue);
+    color: var(--text-white);
+    padding: 80px 5% 100px;
+    text-align: center;
+}
+
+.welcome-content {
+    max-width: 1100px;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: var(--gold-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3.5rem;
+    color: var(--text-white);
+    border: 5px solid var(--text-white);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.welcome-text h1 {
+    font-size: 2.6rem;
+    margin-bottom: 15px;
+}
+
+.welcome-text p {
+    font-size: 1.3rem;
+    opacity: 0.95;
+    margin: 8px 0;
+}
+
+/* Main Dashboard Content */
+.dashboard-content {
+    max-width: 1200px;
+    margin: 30px auto 60px;
+    padding: 0 5% 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.dashboard-card {
+    background: var(--back-white);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.card-header {
+    background: var(--dark-blue);
+    color: var(--text-white);
+    padding: 18px 25px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.card-body {
+    padding: 30px;
+}
+
+.course-item, .grade-item {
+    padding: 18px;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.course-item:hover, .grade-item:hover {
+    background: var(--back-white);
+}
+
+.course-item:last-child, .grade-item:last-child {
+    border-bottom: none;
+}
+
+.course-item p, .grade-item p {
+    font-size: 1.1rem;
+    margin: 6px 0;
+}
+
+.instructor {
+    font-size: 1rem;
+}
+
+.grade-label {
+    font-weight: 600;
+    color: var(--dark-blue);
+}
+
+.see-more {
+    display: block;
+    width: 200px;
+    margin: 30px auto 20px;
+    padding: 12px;
+    background: var(--gold-color);
+    color: var(--text-white);
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.see-more:hover {
+    background: goldenrod;
+    transform: translateY(-3px);
+}
+
+/* Announcements */
+.announcements-section {
+    margin-top: 60px;
+}
+
+.announcements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.announcement-card {
+    background: var(--back-white);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid var(--gold-color);
+}
+
+.announcement-card h4 {
+    margin-bottom: 15px;
+    font-size: 1.25rem;
+}
+
+.announcement-card p {
+    margin-bottom: 15px;
+}
+
+.announcement-meta {
+    font-size: 0.95rem;
+    margin-top: 15px;
+}
+
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-content {
+        flex-direction: column;
+    }
+
+    .welcome-header {
+        padding: 60px 5% 80px;
+    }
+}
+@media (prefers-color-scheme: dark) {
+      :root{
+        --text-white: white;
+        --back-white: black;
+    }
+}

@@ -1,0 +1,144 @@
+:root{
+    --gold-color: #D4AF37;
+    --text-white: white;
+    --back-white: white;
+    --back-section: #f8f9fa;
+    --dark-blue: linear-gradient(135deg, #0f2b5e 0%, #1a3c7a 100%);
+}
+
+/* Hero Section */
+.hero {
+    background: var(--dark-blue);
+    color: var(--text-white);
+    padding: 100px 5% 120px;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 350px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.hero h2 {
+    font-size: 1.6rem;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+.hero-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* Main Content */
+.section {
+    padding: 40px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.what-section {
+    background: var(--back-white);
+}
+
+.problems-section {
+    background: var(--back-section);
+}
+
+.what-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.what-left {
+    flex: 1;
+    min-width: 300px;
+}
+
+.what-left h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.what-right {
+    flex: 2;
+    min-width: 400px;
+}
+
+.what-right p {
+    font-size: 1.15rem;
+}
+
+/* Problems Cards */
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.problem-card {
+    background: var(--back-white);
+    border-radius: 12px;
+    padding: 35px 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.problem-card:hover {
+    transform: translateY(-10px);
+}
+
+.problem-card h3 {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+@media (max-width: 900px) {
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .what-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero h1 { font-size: 2.6rem; }
+}
+
+@media (prefers-color-scheme: dark) {
+      :root{
+        --gold-color: #D4AF37;
+        --text-white: white;
+        --back-white: #1e1e1e;
+        --back-section: #222;
+    }
+}

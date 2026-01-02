@@ -1,0 +1,154 @@
+:root{
+    --gold-color: #D4AF37;
+    --text-white: white;
+    --back-white: white;
+    --back-section: #f8f9fa;
+    --dark-blue: linear-gradient(135deg, #0f2b5e 0%, #1a3c7a 100%);
+}
+
+.hero {
+    background: var(--dark-blue);
+    color: var(--text-white);
+    padding: 100px 5% 120px;
+    text-align: center;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3.1rem;
+    margin-bottom: 1.2rem;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 780px;
+    margin: 0 auto 2.5rem;
+    opacity: 0.92;
+}
+
+.slider-arrows {
+    font-size: 3.5rem;
+    opacity: 0.6;
+    margin: 0 30px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.read-more-btn {
+    display: inline-block;
+    background: var(--gold-color);
+    color: var(--text-white);
+    padding: 14px 38px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    transition: all 0.3s;
+}
+
+.read-more-btn:hover {
+    background: var(--gold-color);
+    transform: translateY(-3px);
+    box-shadow: 0 0px 15px rgba(255, 151, 59, 0.35);
+}
+
+/* Features / Cards Section */
+.section-title {
+    text-align: center;
+    font-size: 2.4rem;
+    margin: 80px 0 50px;
+}
+
+.feuture-container{
+    margin-bottom: 20px;
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 35px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.feature-card {
+    background: var(--back-white);
+    border-radius: 5px;
+    padding: 40px 30px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.14);
+}
+
+.feature-card h3 {
+    margin: 20px 0 15px;
+    font-size: 1.45rem;
+}
+
+.feature-card p {
+    font-size: 1.05rem;
+}
+
+/* What does this platform do? */
+.what-section {
+    background: var(--back-section);
+    padding: 100px 5%;
+}
+
+.what-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.what-text {
+    flex: 1;
+    min-width: 340px;
+}
+
+.what-text h2 {
+    font-size: 2.1rem;
+    margin-bottom: 1.2rem;
+}
+
+.illustration {
+    max-width: 460px;
+    flex: 1;
+}
+
+.illustration img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+@media (max-width: 900px) {
+    .hero h1 { font-size: 2.6rem; }
+    .what-content { flex-direction: column; text-align: center; }
+    .what-text { max-width: 600px; }
+}
+
+@media (prefers-color-scheme: dark) {
+      :root{
+        --gold-color: #D4AF37;
+        --text-white: white;
+        --back-white: #161616;
+        --back-section: #222;
+    }
+}

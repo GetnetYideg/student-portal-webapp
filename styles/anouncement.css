@@ -1,0 +1,153 @@
+:root{
+    --gold-color: #D4AF37;
+    --text-white: white;
+    --back-white: white;
+    --dark-blue: linear-gradient(135deg, #0f2b5e 0%, #1a3c7a 100%);
+}
+.create-section {
+    background: var(--back-white);
+    color:  var(--gold-color);
+    max-width: 1200px;
+    margin: 15px auto;
+    box-shadow: 0 0 11px rgba(0, 0, 0, 0.305);
+    padding: 60px 5%;
+    text-align: center;
+}
+
+.create-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.create-btn {
+    background: var(--gold-color);
+    color: var(--text-white);
+    padding: 16px 40px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.create-btn:hover {
+    background: goldenrod;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(230,126,34,0.4);
+}
+
+.create-text {
+    font-size: 1.4rem;
+    font-weight: bold;
+    opacity: 0.95;
+}
+
+.create-icon {
+    font-size: 2.5rem;
+}
+
+.announcements-section {
+margin-top: 60px;
+}
+
+.announcements-section h1{
+    margin-left: 12%;
+}
+
+.announcements-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.announcement-card {
+    background: var(--back-white);
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    border-left: 5px solid var(--gold-color);
+}
+
+.card-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card-header {
+    color: black;
+    padding: 20px 25px;
+    font-size: 1.45rem;
+    font-weight: 600;
+}
+
+.card-body {
+    padding: 30px 25px;
+    flex: 1;
+}
+
+.card-body p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.card-meta {
+    background: var(--dark-blue);
+    color: var(--text-white);
+    padding: 35px 25px;
+    font-size: 0.95rem;
+    text-align: left;
+    border-radius: 4px;
+    width: 350px;
+}
+
+.read-more {
+    display: block;
+    width: 180px;
+    margin: 25px auto 0;
+    padding: 12px;
+    background: var(--gold-color);
+    color: var(--text-white);
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.read-more:hover {
+    background: goldenrod;
+    transform: translateY(-3px);
+}
+
+@media (max-width: 1000px) {
+    .announcements-section h1 {
+        font-size: 2.4rem;
+    }
+    .card-meta{
+        width:  300px;
+    }
+}
+@media (max-width: 768px){
+    .card-content{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .card-meta{
+        margin-left: 25px;
+    }
+}
+@media (prefers-color-scheme: dark) {
+      :root{
+        --gold-color: #D4AF37;
+        --text-white: white;
+        --back-white: black;
+    }
+}

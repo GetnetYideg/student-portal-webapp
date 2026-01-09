@@ -3,6 +3,7 @@
     --text-white: white;
     --back-white: white;
     --dark-blue: linear-gradient(135deg, #0f2b5e 0%, #1a3c7a 100%);
+    --shadow-color: rgba(0, 0, 0, 0.178);
 }
 .create-section {
     background: var(--back-white);
@@ -16,6 +17,7 @@
 
 .create-btn-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 20px;
@@ -32,12 +34,13 @@
     font-size: 1.3rem;
     font-weight: 600;
     transition: all 0.3s;
+    border: none;
+    cursor: pointer;
 }
 
 .create-btn:hover {
-    background: goldenrod;
     transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(230,126,34,0.4);
+    box-shadow: 2px 2px 5px rgba(230,126,34,0.4);
 }
 
 .create-text {
@@ -45,6 +48,20 @@
     font-weight: bold;
     opacity: 0.95;
 }
+
+.create-text textarea{
+    width: 450px;
+    height: 200px;
+    padding: 10px;
+    border: none;
+    background-color: var(--back-white);
+    box-shadow: -2px 0 2px var(--shadow-color);
+}
+
+.create-text textarea:focus{
+    outline: none;
+}
+
 
 .create-icon {
     font-size: 2.5rem;
@@ -110,21 +127,22 @@ margin-top: 60px;
 
 .read-more {
     display: block;
-    width: 180px;
     margin: 25px auto 0;
     padding: 12px;
-    background: var(--gold-color);
+    background-color: transparent;
     color: var(--text-white);
     text-align: center;
-    border-radius: 5px;
+    border: none;
+    cursor: pointer;
     text-decoration: none;
+    transform: rotate(90deg);
+    font-size: 25px;
     font-weight: 600;
     transition: all 0.3s;
 }
 
 .read-more:hover {
-    background: goldenrod;
-    transform: translateY(-3px);
+    transform: translateY(-3px) rotate(90deg);;
 }
 
 @media (max-width: 1000px) {
@@ -149,5 +167,9 @@ margin-top: 60px;
         --gold-color: #D4AF37;
         --text-white: white;
         --back-white: black;
+        --shadow-color: rgba(255, 255, 255, 0.216);
+    }
+    .create-text textarea{
+        color: white;
     }
 }

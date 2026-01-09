@@ -130,14 +130,13 @@ margin-top: 60px;
     margin: 25px auto 0;
     padding: 12px;
     background-color: transparent;
-    color: var(--text-white);
+    color: gray;
     text-align: center;
     border: none;
     cursor: pointer;
     text-decoration: none;
     transform: rotate(90deg);
     font-size: 25px;
-    font-weight: 600;
     transition: all 0.3s;
 }
 

@@ -1,0 +1,129 @@
+:root{
+    --gold-color: #D4AF37;
+    --text-white: white;
+    --back-white: white;
+    --dark-blue: linear-gradient(135deg, #0f2b5e 0%, #1a3c7a 100%);
+    --shadow-color: rgba(0, 0, 0, 0.178);
+}
+
+.page-header {
+    background: var(--dark-blue);
+    color: var(--text-white);
+    padding: 80px 5% 100px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 50px auto 80px;
+    padding: 0 5%;
+}
+
+.grades-table-container {
+    background: var(--back-white);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: var(--dark-blue);
+    color: var(--text-white);
+}
+
+th {
+    padding: 18px 25px;
+    text-align: left;
+    font-size: 1.1rem;
+}
+
+td {
+    padding: 18px 25px;
+    border-bottom: 1px solid #eee;
+}
+.grade {
+    font-weight: 600;
+    color: black;
+}
+
+.status-pass {
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.status-fail {
+    color: #e74c3c;
+    font-weight: 600;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.summary-card {
+    background: var(--back-white);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px var(--shadow-color);
+    min-width: 220px;
+    flex: 1;
+}
+
+.summary-card h3 {
+    color: black;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.summary-card p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--gold-color);
+}
+
+@media (max-width: 900px) {
+    .page-header h1 {
+        font-size: 2.4rem;
+    }
+
+    th, td {
+        padding: 14px 15px;
+        font-size: 0.95rem;
+    }
+
+    .summary {
+        flex-direction: column;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+      :root{
+        --gold-color: #D4AF37;
+        --text-white: white;
+        --back-white: black;
+        --shadow-color: rgba(255, 255, 255, 0.216);
+    }
+    .summary-card h3 {
+        color: white;
+    }
+}

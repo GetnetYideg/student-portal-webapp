@@ -1,107 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Portal</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>AASTU Student Portal - Courses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../styles/shared.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        header {
+            background: white;
+            padding: 15px 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            height: 70px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 500;
+            font-size: 1.05rem;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        nav a:hover {
+            background: #f1f5f9;
+        }
+
+        nav a.active {
+            background: #e67e22;
+            color: white;
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, #0f2b5e 0%, #1a3c7a 100%);
+            color: white;
+            padding: 80px 5% 100px;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .page-header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 50px auto 80px;
+            padding: 0 5%;
+        }
+
+        .filters {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .filter-group {
+            flex: 1;
+            min-width: 180px;
+        }
+
+        select, input[type="text"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .course-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.14);
+        }
+
+        .course-header {
+            background: #0f2b5e;
+            color: white;
+            padding: 18px 24px;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .course-body {
+            padding: 24px;
+        }
+
+        .course-info p {
+            margin: 10px 0;
+            font-size: 1.05rem;
+        }
+
+        .course-info strong {
+            color: #0f2b5e;
+        }
+
+        .course-status {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .status-active   { background: #27ae60; color: white; }
+        .status-completed { background: #3498db; color: white; }
+        .status-upcoming  { background: #f39c12; color: white; }
+
+        .no-results {
+            text-align: center;
+            padding: 80px 20px;
+            color: #777;
+            font-size: 1.3rem;
+        }
+
+        @media (max-width: 900px) {
+            .filters {
+                flex-direction: column;
+            }
+            .page-header h1 {
+                font-size: 2.4rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo-container">
-            <img class="logo-img" src="images/company-logo.png" width="150px" alt="Company logo">
+
+<header>
+    <div class="nav-container">
+        <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="logo">
+        <nav>
+            <ul>
+                <li><a href="dashboard.html">Dash Board</a></li>
+                <li><a href="announcement.html">Announcement</a></li>
+                <li><a href="grade.html">Grade</a></li>
+                <li><a href="#" class="active">Course</a></li>
+                <li><a href="profile.html">Profile</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="page-header">
+    <h1>Your Courses</h1>
+    <p>Manage and explore all your registered and available courses</p>
+</section>
+
+<div class="main-content">
+
+    <!-- Filters -->
+    <div class="filters">
+        <div class="filter-group">
+            <select id="semesterFilter">
+                <option value="">All Semesters</option>
+                <option value="2025-1">2025 Semester I</option>
+                <option value="2025-2">2025 Semester II</option>
+                <option value="2024-2">2024 Semester II</option>
+            </select>
         </div>
-        <div class="nav-container">
-            <a href="home.html" class="home-nav">Home</a>
-            <a href="anouncement.html" class="about-nav">Anouncement</a>
-            <a href="grade.html" class="login-nav">Grade</a>
-            <a href="dashboard.html" class="dasboard-nav">Dashboard</a>
-            <a href="profile.html" class="profile-nav">Profile</a>
+        <div class="filter-group">
+            <input type="text" id="searchInput" placeholder="Search by course name or code...">
         </div>
-    </header>
-    <main>
-        <h1>My Courses</h1>
-        <section style="border:solid 1px black" class="subject-status">
-                <h3>Discrete Mathematics</h3>
-                <div>
-                    <p>Year: 2<sup>nd</sup> year</p>
-                    <p>Semister: I</p>
-                    <p>Status: taken</p>
-                    <p>Required subjects: Applied</p>
+    </div>
+
+    <!-- Courses Grid -->
+    <div class="courses-grid" id="coursesContainer">
+
+        <!-- Course cards will be generated by JavaScript -->
+
+    </div>
+
+    <div class="no-results" id="noResults" style="display:none;">
+        No courses found matching your search criteria...
+    </div>
+
+</div>
+
+<footer>
+    <div class="footer-content">
+        <h3>Contact us</h3>
+        <div class="contact-item"><i class="fas fa-phone"></i> +251 987 536 423</div>
+        <div class="contact-item"><i class="fas fa-envelope"></i> aastu@gmail.com</div>
+
+        <img src= "../images/AASTU-LOGO.png" alt="AASTU Logo" class="footer-logo">
+
+        <div style="margin-top: 40px; opacity: 0.8; font-size: 0.95rem;">
+            © 2025 Student Portal. All rights reserved.
+        </div>
+    </div>
+</footer>
+
+<script>
+// Sample course data (in real application this would come from backend)
+const courses = [
+    {
+        code: "SWEG432",
+        name: "Fundamentals of Programming",
+        credit: 3,
+        instructor: "Miss Lelise",
+        semester: "2025-1",
+        status: "active",
+        schedule: "Mon & Wed 08:30 - 10:00",
+        location: "Hall A-201"
+    },
+    {
+        code: "SWEG652",
+        name: "Data Structures & Algorithms",
+        credit: 4,
+        instructor: "Mr. Fedlu",
+        semester: "2025-1",
+        status: "active",
+        schedule: "Tue & Thu 02:30 - 04:00",
+        location: "Lab B-105"
+    },
+    {
+        code: "SWEG511",
+        name: "Computer Organization & Architecture",
+        credit: 3,
+        instructor: "Dr. Elias",
+        semester: "2024-2",
+        status: "completed",
+        schedule: "Mon & Wed 10:30 - 12:00",
+        location: "Hall C-302"
+    },
+    {
+        code: "MATH301",
+        name: "Discrete Mathematics",
+        credit: 3,
+        instructor: "Ms. Selam",
+        semester: "2024-2",
+        status: "completed",
+        schedule: "Fri 08:30 - 11:00",
+        location: "Hall D-108"
+    },
+    {
+        code: "SWEG710",
+        name: "Database Systems",
+        credit: 4,
+        instructor: "Dr. Lemlem",
+        semester: "2025-2",
+        status: "upcoming",
+        schedule: "To be announced",
+        location: "TBA"
+    }
+];
+
+// DOM elements
+const coursesContainer = document.getElementById('coursesContainer');
+const noResults = document.getElementById('noResults');
+const semesterFilter = document.getElementById('semesterFilter');
+const searchInput = document.getElementById('searchInput');
+
+// Render courses
+function renderCourses(filteredCourses) {
+    coursesContainer.innerHTML = '';
+
+    if (filteredCourses.length === 0) {
+        noResults.style.display = 'block';
+        return;
+    }
+
+    noResults.style.display = 'none';
+
+    filteredCourses.forEach(course => {
+        const card = document.createElement('div');
+        card.className = 'course-card';
+        card.innerHTML = `
+            <div class="course-header">${course.code} - ${course.name}</div>
+            <div class="course-body">
+                <div class="course-info">
+                    <p><strong>Credit Hours:</strong> ${course.credit}</p>
+                    <p><strong>Instructor:</strong> ${course.instructor}</p>
+                    <p><strong>Schedule:</strong> ${course.schedule}</p>
+                    <p><strong>Location:</strong> ${course.location}</p>
                 </div>
-                <div>
-                    <img src="images/subjects/math.png" height="250px" alt="Image for physics">
-                </div>
-        </section>
-        <section style="border: solid 1px black" class="subject-status">
-                <h3>Data Structure and Algorithm</h3>
-                <div>
-                    <p>Year: 3<sup>rd</sup> year</p>
-                    <p>Semister: I</p>
-                    <p>Status: taken</p>
-                    <p>Required subjects: C++</p>
-                </div>
-                <div>
-                    <img src="images/subjects/dsa.png" height="250px" alt="Image for physics">
-                </div>
-        </section>
-        <section style="border:solid 1px black" class="subject-status">
-                <h3>Physics</h3>
-                <div>
-                    <p>Year: 1<sup>st</sup> year</p>
-                    <p>Semister: II</p>
-                    <p>Status: taken</p>
-                    <p>Required subjects: none</p>
-                </div>
-                <div>
-                    <img src="images/subjects/physics.png" height="250px" alt="Image for physics">
-                </div>
-        </section>
-        <section style="border:solid 1px black" class="subject-status">
-                <h3>Digital Logic Design</h3>
-                <div>
-                    <p>Year: 1<sup>st</sup> year</p>
-                    <p>Semister: II</p>
-                    <p>Status: taken</p>
-                    <p>Required subjects: none</p>
-                </div>
-                <div>
-                    <img src="images/subjects/dld.png" height="250px" alt="Image for physics">
-                </div>
-        </section>
-        <section style="border:solid 1px black" class="subject-status">
-                <h3>Database</h3>
-                <div>
-                    <p>Year: 1<sup>st</sup> year</p>
-                    <p>Semister: II</p>
-                    <p>Status: taken</p>
-                    <p>Required subjects: C++</p>
-                </div>
-                <div>
-                    <img src="images/subjects/database.png" height="250px" alt="Image for physics">
-                </div>
-        </section>
-        <section style="border:solid 1px black" class="subject-status">
-                <h3>Psychology</h3>
-                <div>
-                    <p>Year: 1<sup>st</sup> year</p>
-                    <p>Semister: I</p>
-                    <p>Status: taken</p>
-                    <p>Required subjects: None</p>
-                </div>
-                <div>
-                    <img src="images/subjects/psycho.png" height="250px" alt="Image for physics">
-                </div>
-        </section>
-        <section id="contact">
-            <div class="contact-header-container">
-                <h2 class="contact-header">Contact</h2>
-                <img class="logo" src="images/company-logo.png" width="150px" alt="Company logo">
+                <span class="course-status status-${course.status}">
+                    ${course.status.charAt(0).toUpperCase() + course.status.slice(1)}
+                </span>
             </div>
-            <div class="contact-detail">
-                <label><img src="images/phone-icon.png" height="70px" alt="Phone icon"></label><tel>+251900000000</tel><br>
-                <label><img src="images/emai-icon.png" height="70px" alt="Email icon"></label><email>getnetyideg54@gmain.com</email>
-            </div>
-        </section>
-    </main>
+        `;
+        coursesContainer.appendChild(card);
+    });
+}
+
+// Filter function
+function filterCourses() {
+    const semester = semesterFilter.value;
+    const searchTerm = searchInput.value.toLowerCase().trim();
+
+    let filtered = courses;
+
+    // Semester filter
+    if (semester) {
+        filtered = filtered.filter(c => c.semester === semester);
+    }
+
+    // Search filter
+    if (searchTerm) {
+        filtered = filtered.filter(c => 
+            c.name.toLowerCase().includes(searchTerm) ||
+            c.code.toLowerCase().includes(searchTerm) ||
+            c.instructor.toLowerCase().includes(searchTerm)
+        );
+    }
+
+    renderCourses(filtered);
+}
+
+// Event listeners
+semesterFilter.addEventListener('change', filterCourses);
+searchInput.addEventListener('input', filterCourses);
+
+// Initial render
+renderCourses(courses);
+</script>
+
 </body>
 </html>

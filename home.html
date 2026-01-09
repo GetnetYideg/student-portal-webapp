@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/shared.css">
+    <script src="scripts/rollingBackground.js"></script>
 </head>
 <body>
 
@@ -36,9 +37,9 @@
         <p>Access courses, grades, schedules, and announcements—all from a single, easy-to-use student portal designed to keep you on track.</p>
 
         <div style="margin: 40px 0;">
-            <span class="slider-arrows"><</span>
-            <a href="#" class="read-more-btn">READ MORE</a>
-            <span class="slider-arrows">></span>
+            <span id="leftSlider" class="slider-arrows" onclick=moveLeft()><</span>
+            <a href="about.html" class="read-more-btn">READ MORE</a>
+            <span id="rightSlider" class="slider-arrows">></span>
         </div>
 
         <div style="margin-top: 30px; font-size: 2.2rem; opacity: 0.7;">

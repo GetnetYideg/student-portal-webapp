@@ -1,0 +1,132 @@
+:root{
+    --text-white: white;
+    --back-white: white;
+    --dark-blue: linear-gradient(135deg, #0f2b5e 0%, #1a3c7a 100%);
+    --shadow-color: rgba(0, 0, 0, 0.178);
+}
+.page-header {
+    background: var(--dark-blue);
+    color: var(--text-white);
+    padding: 80px 5% 100px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    font-size: 1.3rem;
+    opacity: 0.9;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 50px auto 80px;
+    padding: 0 5%;
+}
+
+.filters {
+    background: var(--back-white);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+}
+
+.filter-group {
+    flex: 1;
+    min-width: 180px;
+}
+
+select, input[type="text"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 30px;
+}
+
+.course-card {
+    background: var(--back-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.14);
+}
+
+.course-header {
+    background: var(--dark-blue);
+    color: var(--text-white);
+    padding: 18px 24px;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.course-body {
+    padding: 24px;
+}
+
+.course-info p {
+    margin: 10px 0;
+    font-size: 1.05rem;
+}
+
+.course-info strong {
+    color: #0f2b5e;
+}
+
+.course-status {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+.status-active   { background: #27ae60; color: var(--text-white); }
+.status-completed { background: #3498db; color: var(--text-white); }
+.status-upcoming  { background: #f39c12; color: var(--text-white); }
+
+.no-results {
+    text-align: center;
+    padding: 80px 20px;
+    color: #777;
+    font-size: 1.3rem;
+}
+
+@media (max-width: 900px) {
+    .filters {
+        flex-direction: column;
+    }
+    .page-header h1 {
+        font-size: 2.4rem;
+    }
+}
+@media (prefers-color-scheme: dark) {
+      :root{
+        --text-white: white;
+        --back-white: black;
+        --shadow-color: rgba(255, 255, 255, 0.216);
+    }
+    .course-info strong {
+        color: whitesmoke;
+    }
+}

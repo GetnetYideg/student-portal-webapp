@@ -16,7 +16,7 @@
         <nav>
             <ul>
                 <li><a href="dashboard.html">Dash Board</a></li>
-                <li><a href="anouncement.html">Announcement</a></li>
+                <li><a href="announcement.html">Announcement</a></li>
                 <li><a href="grade.html">Grade</a></li>
                 <li><a href="course.html">Course</a></li>
                 <li><a href="#" class="active">Profile</a></li>
@@ -65,23 +65,64 @@
         <div class="settings-grid">
             <div class="setting-item">
                 <i class="fas fa-user"></i>
-                <p>User name: Fahmi Rahmet</p>
-                <a href="#" class="btn">Change Username</a>
+                <p class="username-display">Fahmi Rahmet</p>
+                <button class="btn" id="changeUsernameBtn">Change Username</button>
             </div>
 
             <div class="setting-item">
                 <i class="fas fa-lock"></i>
                 <p>Password: ********</p>
-                <a href="#" class="btn">Change Password</a>
+                <button class="btn" id="changePasswordBtn">Change Password</button>
             </div>
 
         </div>
-        <div class="setting-item email-setting">
-            <i class="fas fa-envelope" style="font-size: 2.2rem; margin-bottom: 15px;"></i>
-            <p>Email: fahmiraahmet@gmail.com</p>
-            <a href="#" class="btn">Change Email</a>
+    </div>
+    <div class="modal" id="usernameModal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <h2>Change Username</h2>
+            <form>
+                <label>Current Password</label>
+                <input type="password" placeholder="password" id="currentPassForUsername" required>
+    
+                <label>New Username</label>
+                <input type="text" placeholder="name" id="newUsername" required>
+    
+                <p class="error-message" style="color:#dc2626; margin:10px 0;"></p>
+    
+                <button type="submit" class="btn-primary">Update Username</button>
+            </form>
         </div>
-        
+    </div>
+    
+    <div class="modal" id="passwordModal">
+        <div class="modal-content">
+            <span class="close-modal">×</span>
+            <h2>Change Password</h2>
+            <form>
+                <label>Current Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="currentPassword" placeholder="current password" required>
+                    <i class="fas fa-eye toggle-password"></i>
+                </div>
+    
+                <label>New Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="newPassword" placeholder="new password" required>
+                    <i class="fas fa-eye toggle-password"></i>
+                </div>
+    
+                <label>Confirm New Password</label>
+                <div class="password-wrapper">
+                    <input type="password" id="confirmPassword" placeholder="confirm" required>
+                    <i class="fas fa-eye toggle-password"></i>
+                </div>
+    
+                <p class="error-message" style="color:#dc2626; margin:10px 0;"></p>
+    
+                <button type="submit" class="btn-primary">Update Password</button>
+            </form>
+        </div>
     </div>
 </div>
 
@@ -98,6 +139,8 @@
         </div>
     </div>
 </footer>
+
+<script src="../scripts/settings.js"></script>
 
 </body>
 </html>

@@ -1,118 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AASTU Student Portal - Announcements</title>
+    <link rel="icon" type="image/jpg" href="../images/favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="../styles/anouncement.css">
     <link rel="stylesheet" href="../styles/shared.css">
+    <script src="../scripts/menu.js" defer></script>
+    <script src="../scripts/session.js" defer></script>
+    <script src="../scripts/postAnnouncement.js" defer></script>
 </head>
+
 <body>
 
-<header>
-    <div class="nav-container">
-        <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="lecture-dashboard.html">Dash Board</a></li>
-                <li><a href="#" class="active">Announcement</a></li>
-                <li><a href="submit-grade.html">Submit Grade</a></li>
-                <li><a href="lecture-profile.html">Profile</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<section class="create-section">
-    <div class="create-btn-container">
-        <div class="create-text">
-            <textarea name="anounce" placeholder="Add New Announcement" id="newAnounce"></textarea>
+    <header>
+        <div class="nav-container">
+            <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="logo">
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="lecture-dashboard.html">Dash Board</a></li>
+                    <li><a href="#" class="active">Announcement</a></li>
+                    <li><a href="submit-grade.html">Submit Grade</a></li>
+                    <li><a href="lecture-profile.html">Profile</a></li>
+                </ul>
+            </nav>
         </div>
-        <button class="create-btn">Add Announcement</button>
-    </div>
-</section>
+    </header>
 
-<section class="announcements-section">
-    <h1>Announcements</h1>
+    <section class="create-section">
+        <div class="create-btn-container">
+            <div class="create-text">
+                <textarea name="anounce" placeholder="Add New Announcement" id="newAnounce"></textarea>
+            </div>
+            <button class="create-btn">Add Announcement</button>
+        </div>
+    </section>
 
-    <div class="announcements-grid">
+    <section class="announcements-section">
+        <h1>Announcements</h1>
 
-        <div class="announcement-card">
-            <div class="card-header">Mid Exam Schedule</div>
-            <div class="card-content">
-                <div class="card-body">
-                    <p>The comprehensive schedule for the upcoming mid-semester examinations is now available. Please check the document for your specific course codes, hall assignments, and time slots.</p>
-                    <button class="read-more">&gt;</button>
+        <div class="announcements-grid">
+
+            <div class="announcement-card">
+                <div class="card-header">Mid Exam Schedule</div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <p>The comprehensive schedule for the upcoming mid-semester examinations is now available.
+                            Please check the document for your specific course codes, hall assignments, and time slots.
+                        </p>
+                        <button class="read-more">&gt;</button>
+                    </div>
+                    <div class="card-meta">
+                        Published By: Dr. Elias Gebre (Academic Dean)<br>
+                        Date: October 26, 2023<br>
+                        Time: 09:00 AM
+                    </div>
                 </div>
-                <div class="card-meta">
-                    Published By: Dr. Elias Gebre (Academic Dean)<br>
-                    Date: October 26, 2023<br>
-                    Time: 09:00 AM
+            </div>
+
+            <div class="announcement-card">
+                <div class="card-header">Annual Tech Innovation Event</div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <p>Join us for a showcase of student-led engineering projects and a chance to meet with industry
+                            leaders. This event is a platform for students to pitch their ideas and secure internship
+                            opportunities.</p>
+                        <button class="read-more">&gt;</button>
+                    </div>
+                    <div class="card-meta">
+                        Published By: Solomon (Student Union President)<br>
+                        Date: October 28, 2023<br>
+                        Time: 02:30 PM
+                    </div>
+                </div>
+            </div>
+
+            <div class="announcement-card">
+                <div class="card-header">New Internship Openings</div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <p>Ethio-Telecom is looking for motivated 3rd and 4th-year AASTU students for their Software
+                            Engineering and Network Security tracks. Detailed requirements and application forms are
+                            attached below.</p>
+                        <button class="read-more">&gt;</button>
+                    </div>
+                    <div class="card-meta">
+                        Published By: Career Development Office<br>
+                        Date: October 30, 2023<br>
+                        Time: 11:15 AM
+                    </div>
+                </div>
+            </div>
+
+            <div class="announcement-card">
+                <div class="card-header">Planned Maintenance</div>
+                <div class="card-content">
+                    <div class="card-body">
+                        <p>Please be informed that the digital library catalog and off-campus access will be temporarily
+                            unavailable due to a scheduled system upgrade.</p>
+                        <button class="read-more">&gt;</button>
+                    </div>
+                    <div class="card-meta">
+                        Published By: ICT Directorate Director<br>
+                        Date: November 01, 2023<br>
+                        Time: 04:45 PM
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="announcement-card">
-            <div class="card-header">Annual Tech Innovation Event</div>
-            <div class="card-content">
-                <div class="card-body">
-                    <p>Join us for a showcase of student-led engineering projects and a chance to meet with industry leaders. This event is a platform for students to pitch their ideas and secure internship opportunities.</p>
-                    <button class="read-more">&gt;</button>
-                </div>
-                <div class="card-meta">
-                    Published By: Solomon (Student Union President)<br>
-                    Date: October 28, 2023<br>
-                    Time: 02:30 PM
-                </div>
+    <footer>
+        <div class="footer-content">
+            <h3>Contact us</h3>
+            <div class="contact-item"><i class="fas fa-phone"></i> +251 987 536 423</div>
+            <div class="contact-item"><i class="fas fa-envelope"></i> aastu@gmail.com</div>
+
+            <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="footer-logo">
+
+            <div style="margin-top: 40px; opacity: 0.8; font-size: 0.95rem;">
+                © 2025 Student Portal. All rights reserved.
             </div>
         </div>
-
-        <div class="announcement-card">
-            <div class="card-header">New Internship Openings</div>
-            <div class="card-content">
-                <div class="card-body">
-                    <p>Ethio-Telecom is looking for motivated 3rd and 4th-year AASTU students for their Software Engineering and Network Security tracks. Detailed requirements and application forms are attached below.</p>
-                    <button class="read-more">&gt;</button>
-                </div>
-                <div class="card-meta">
-                    Published By: Career Development Office<br>
-                    Date: October 30, 2023<br>
-                    Time: 11:15 AM
-                </div>
-            </div>
-        </div>
-
-        <div class="announcement-card">
-            <div class="card-header">Planned Maintenance</div>
-            <div class="card-content">
-                <div class="card-body">
-                    <p>Please be informed that the digital library catalog and off-campus access will be temporarily unavailable due to a scheduled system upgrade.</p>
-                    <button class="read-more">&gt;</button>
-                </div>
-                <div class="card-meta">
-                    Published By: ICT Directorate Director<br>
-                    Date: November 01, 2023<br>
-                    Time: 04:45 PM
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer>
-    <div class="footer-content">
-        <h3>Contact us</h3>
-        <div class="contact-item"><i class="fas fa-phone"></i> +251 987 536 423</div>
-        <div class="contact-item"><i class="fas fa-envelope"></i> aastu@gmail.com</div>
-
-        <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="footer-logo">
-
-        <div style="margin-top: 40px; opacity: 0.8; font-size: 0.95rem;">
-            © 2025 Student Portal. All rights reserved.
-        </div>
-    </div>
-</footer>
+    </footer>
 
 </body>
+
 </html>

@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AASTU Student Portal - Login</title>
+    <link rel="icon" type="image/jpg" href="images/favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="styles/login.css">
 </head>
+
 <body>
     <div class="container">
 
@@ -19,7 +22,7 @@
         <div class="right-side">
             <h2>LOGIN TO YOUR ACCOUNT</h2>
 
-            <form>
+            <form onsubmit="handleLogin(event, 'instructor')">
                 <div class="form-group">
                     <i class="fas fa-user"></i>
                     <input type="text" placeholder="User name or Email" required />
@@ -37,8 +40,10 @@
                         <i class="fas fa-eye"></i>
                     </button>
                 </div>
+                <p class="error-message" style="color: red; display: none; text-align: center; margin-bottom: 10px;">
+                </p>
                 <div class="btn-container">
-                    <button type="submit" class="login-btn"><a href="instructurePages/lecture-anouncement.html">LOGIN</a></button>
+                    <button type="submit" class="login-btn">LOGIN</button>
                 </div>
             </form>
 
@@ -48,6 +53,7 @@
         </div>
     </div>
 
+    <script src="scripts/validate.js"></script>
     <script>
         const togglePassword = document.querySelector('#togglePassword');
         const password = document.querySelector('#password');
@@ -60,4 +66,5 @@
         });
     </script>
 </body>
+
 </html>

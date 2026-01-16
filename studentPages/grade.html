@@ -1,130 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AASTU Student Portal - Grades</title>
+    <link rel="icon" type="image/jpg" href="../images/favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="../styles/shared.css">
+    <script src="../scripts/menu.js" defer></script>
     <link rel="stylesheet" href="../styles/grade.css">
 </head>
+
 <body>
 
-<header>
-    <div class="nav-container">
-        <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="dashboard.html">Dash Board</a></li>
-                <li><a href="announcement.html">Announcement</a></li>
-                <li><a href="#" class="active">Grade</a></li>
-                <li><a href="course.html">Course</a></li>
-                <li><a href="profile.html">Profile</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<section class="page-header">
-    <h1>Your Grades</h1>
-    <p>View your academic performance across all registered courses</p>
-</section>
-
-<div class="main-content">
-    <div class="grades-table-container">
-        <table>
-            <thead>
-                <tr>
-                    <th>Course Code</th>
-                    <th>Course Name</th>
-                    <th>Credit Hours</th>
-                    <th>Grade</th>
-                    <th>Grade Point</th>
-                    <th>Status</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>SWEG432</td>
-                    <td>Fundamentals of Programming</td>
-                    <td>3</td>
-                    <td class="grade">A</td>
-                    <td>4.00</td>
-                    <td class="status-pass">Pass</td>
-                </tr>
-                <tr>
-                    <td>SWEG652</td>
-                    <td>Data Structures & Algorithms</td>
-                    <td>4</td>
-                    <td class="grade">B+</td>
-                    <td>3.33</td>
-                    <td class="status-pass">Pass</td>
-                </tr>
-                <tr>
-                    <td>SWEG511</td>
-                    <td>Computer Organization & Architecture</td>
-                    <td>3</td>
-                    <td class="grade">A-</td>
-                    <td>3.67</td>
-                    <td class="status-pass">Pass</td>
-                </tr>
-                <tr>
-                    <td>SWEG423</td>
-                    <td>Software Engineering Principles</td>
-                    <td>3</td>
-                    <td class="grade">B</td>
-                    <td>3.00</td>
-                    <td class="status-pass">Pass</td>
-                </tr>
-                <tr>
-                    <td>MATH301</td>
-                    <td>Discrete Mathematics</td>
-                    <td>3</td>
-                    <td class="grade">C+</td>
-                    <td>2.33</td>
-                    <td class="status-pass">Pass</td>
-                </tr>
-                <tr>
-                    <td>SWEG710</td>
-                    <td>Database Systems</td>
-                    <td>4</td>
-                    <td class="grade">A+</td>
-                    <td>4.00</td>
-                    <td class="status-pass">Pass</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="summary">
-        <div class="summary-card">
-            <h3>Current Semester GPA</h3>
-            <p>3.62</p>
+    <header>
+        <div class="nav-container">
+            <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="logo">
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="dashboard.html">Dash Board</a></li>
+                    <li><a href="announcement.html">Announcement</a></li>
+                    <li><a href="#" class="active">Grade</a></li>
+                    <li><a href="course.html">Course</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="summary-card">
-            <h3>Cumulative GPA</h3>
-            <p>3.55</p>
+    </header>
+
+    <section class="page-header">
+        <h1>Your Grades</h1>
+        <p>View your academic performance across all registered courses</p>
+    </section>
+
+    <div class="main-content">
+        <div class="grades-table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Course Name</th>
+                        <th>Credit Hours</th>
+                        <th>Grade</th>
+                        <th>Grade Point</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>SWEG432</td>
+                        <td>Fundamentals of Programming</td>
+                        <td>3</td>
+                        <td class="grade">A</td>
+                        <td>4.00</td>
+                        <td class="status-pass">Pass</td>
+                    </tr>
+                    <tr>
+                        <td>SWEG652</td>
+                        <td>Data Structures & Algorithms</td>
+                        <td>4</td>
+                        <td class="grade">B+</td>
+                        <td>3.33</td>
+                        <td class="status-pass">Pass</td>
+                    </tr>
+                    <tr>
+                        <td>SWEG511</td>
+                        <td>Computer Organization & Architecture</td>
+                        <td>3</td>
+                        <td class="grade">A-</td>
+                        <td>3.67</td>
+                        <td class="status-pass">Pass</td>
+                    </tr>
+                    <tr>
+                        <td>SWEG423</td>
+                        <td>Software Engineering Principles</td>
+                        <td>3</td>
+                        <td class="grade">B</td>
+                        <td>3.00</td>
+                        <td class="status-pass">Pass</td>
+                    </tr>
+                    <tr>
+                        <td>MATH301</td>
+                        <td>Discrete Mathematics</td>
+                        <td>3</td>
+                        <td class="grade">C+</td>
+                        <td>2.33</td>
+                        <td class="status-pass">Pass</td>
+                    </tr>
+                    <tr>
+                        <td>SWEG710</td>
+                        <td>Database Systems</td>
+                        <td>4</td>
+                        <td class="grade">A+</td>
+                        <td>4.00</td>
+                        <td class="status-pass">Pass</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="summary-card">
-            <h3>Total Credit Hours</h3>
-            <p>20</p>
-        </div>
-    </div>
-</div>
 
-<footer>
-    <div class="footer-content">
-        <h3>Contact us</h3>
-        <div class="contact-item"><i class="fas fa-phone"></i> +251 987 536 423</div>
-        <div class="contact-item"><i class="fas fa-envelope"></i> aastu@gmail.com</div>
-
-        <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="footer-logo">
-
-        <div style="margin-top: 40px; opacity: 0.8; font-size: 0.95rem;">
-            © 2025 Student Portal. All rights reserved.
+        <div class="summary">
+            <div class="summary-card">
+                <h3>Current Semester GPA</h3>
+                <p>3.62</p>
+            </div>
+            <div class="summary-card">
+                <h3>Cumulative GPA</h3>
+                <p>3.55</p>
+            </div>
+            <div class="summary-card">
+                <h3>Total Credit Hours</h3>
+                <p>20</p>
+            </div>
         </div>
     </div>
-</footer>
+
+    <footer>
+        <div class="footer-content">
+            <h3>Contact us</h3>
+            <div class="contact-item"><i class="fas fa-phone"></i> +251 987 536 423</div>
+            <div class="contact-item"><i class="fas fa-envelope"></i> aastu@gmail.com</div>
+
+            <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="footer-logo">
+
+            <div style="margin-top: 40px; opacity: 0.8; font-size: 0.95rem;">
+                © 2025 Student Portal. All rights reserved.
+            </div>
+        </div>
+    </footer>
 
 </body>
+
 </html>

@@ -1,142 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AASTU Student Portal - Instructor Profile</title>
+    <link rel="icon" type="image/jpg" href="../images/favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="../styles/lecture-profile.css">
     <link rel="stylesheet" href="../styles/shared.css">
+    <script src="../scripts/menu.js" defer></script>
+    <script src="../scripts/session.js" defer></script>
 </head>
+
 <body>
 
-<header>
-    <div class="nav-container">
-        <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="lecture-dashboard.html">Dash Board</a></li>
-                <li><a href="lecture-anouncement.html">Announcement</a></li>
-                <li><a href="submit-grade.html">Submit Grade</a></li>
-                <li><a href="#" class="active">Profile</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<section class="profile-header">
-    <div class="profile-header-content">
-        <div class="avatar">
-            <i class="fas fa-user-tie"></i>
+    <header>
+        <div class="nav-container">
+            <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="logo">
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="lecture-dashboard.html">Dash Board</a></li>
+                    <li><a href="lecture-anouncement.html">Announcement</a></li>
+                    <li><a href="submit-grade.html">Submit Grade</a></li>
+                    <li><a href="#" class="active">Profile</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="profile-info">
-            <h2>Fedlu Yalew</h2>
-            <p><strong>ID:</strong> ETSO567/16</p>
-            <p><strong>Department:</strong> Software Engineering</p>
-        </div>
-    </div>
-</section>
+    </header>
 
-<div class="main-content">
-    <h2 class="section-title">Profile</h2>
-
-    <div class="profile-sections">
-        <div class="card">
-            <h3>Personal Info</h3>
-            <div class="info-item"><strong>Email:</strong> fedluayalew@gmail.com</div>
-            <div class="info-item"><strong>Phone:</strong> 0905338431</div>
-            <div class="info-item"><strong>Gender:</strong> Male</div>
-            <div class="info-item"><strong>Bio:</strong> Some text just to hold a place for the instructor's bio.</div>
-        </div>
-
-        <div class="card">
-            <h3>Academic Info</h3>
-            <div class="info-item"><strong>Instructor ID:</strong> FAJ0544/16</div>
-            <div class="info-item"><strong>Department:</strong> Software Engineering</div>
-        </div>
-    </div>
-
-    <div class="settings-section">
-        <h2 class="section-title">Settings</h2>
-        <div class="settings-grid">
-            <div class="setting-item">
-                <i class="fas fa-user"></i>
-                <p class="username-display" >Fedlu Ayalewe</p>
-                <button id="changeUsernameBtn" class="btn">Change Username</button>
+    <section class="profile-header">
+        <div class="profile-header-content">
+            <div class="avatar">
+                <i class="fas fa-user-tie"></i>
             </div>
+            <div class="profile-info">
+                <h2 class="user-name">Dr. Fedlu Rahmet</h2>
+                <p><strong>ID:</strong> <span class="user-id">EDI004/00</span></p>
+                <p><strong>Department:</strong> <span class="user-dept">Software Engineering</span></p>
+                <p><strong>Title:</strong> Lecturer</p>
+            </div>
+    </section>
 
-            <div class="setting-item">
-                <i class="fas fa-lock"></i>
-                <p>Password: ********</p>
-                <button id="changePasswordBtn" class="btn">Change Password</button>
+    <div class="main-content">
+        <h2 class="section-title">Profile</h2>
+
+        <div class="profile-sections">
+            <div class="card">
+                <h3>Personal Info</h3>
+                <div class="info-item"><strong>Email:</strong> <span class="user-email">fedlu.rahmet@aastu.edu.et</span>
+                </div>
+                <div class="info-item"><strong>Phone:</strong> 0911223344</div>
+                <div class="info-item"><strong>Gender:</strong> Male</div>
+                <div class="info-item"><strong>Bio:</strong> Experienced lecturer in software engineering.</div>
+            </div>
+            <div class="card">
+                <h3>Academic Info</h3>
+                <div class="info-item"><strong>Instructor ID:</strong> <span class="user-id">EDI004/00</span></div>
+                <div class="info-item"><strong>Department:</strong> <span class="user-dept">Software Engineering</span>
+                </div>
+                <div class="info-item"><strong>Specialization:</strong> Software Architecture</div>
+                <div class="info-item"><strong>Office:</strong> Block 50, Room 204</div>
             </div>
         </div>
-    </div>
 
-     <div class="modal" id="usernameModal">
-        <div class="modal-content">
-            <span class="close-modal">×</span>
-            <h2>Change Username</h2>
-            <form>
-                <label>Current Password</label>
-                <input type="password" placeholder="password" id="currentPassForUsername" required>
-    
-                <label>New Username</label>
-                <input type="text" placeholder="name" id="newUsername" required>
-    
-                <p class="error-message" style="color:#dc2626; margin:10px 0;"></p>
-    
-                <button type="submit" class="btn-primary">Update Username</button>
-            </form>
-        </div>
-    </div>
-    
-    <div class="modal" id="passwordModal">
-        <div class="modal-content">
-            <span class="close-modal">×</span>
-            <h2>Change Password</h2>
-            <form>
-                <label>Current Password</label>
-                <div class="password-wrapper">
-                    <input type="password" id="currentPassword" placeholder="current password" required>
-                    <i class="fas fa-eye toggle-password"></i>
+        <div class="settings-section">
+            <h2 class="section-title">Settings</h2>
+            <div class="settings-grid">
+                <div class="setting-item">
+                    <i class="fas fa-user-tie"></i>
+                    <p class="username-display user-name">Fedlu Rahmet</p>
+                    <button class="btn" id="changeUsernameBtn">Change Username</button>
                 </div>
-    
-                <label>New Password</label>
-                <div class="password-wrapper">
-                    <input type="password" id="newPassword" placeholder="new password" required>
-                    <i class="fas fa-eye toggle-password"></i>
+
+                <div class="setting-item">
+                    <i class="fas fa-lock"></i>
+                    <p>Password: ********</p>
+                    <button id="changePasswordBtn" class="btn">Change Password</button>
                 </div>
-    
-                <label>Confirm New Password</label>
-                <div class="password-wrapper">
-                    <input type="password" id="confirmPassword" placeholder="confirm" required>
-                    <i class="fas fa-eye toggle-password"></i>
-                </div>
-    
-                <p class="error-message" style="color:#dc2626; margin:10px 0;"></p>
-    
-                <button type="submit" class="btn-primary">Update Password</button>
-            </form>
+            </div>
         </div>
+
+        <div class="modal" id="usernameModal">
+            <div class="modal-content">
+                <span class="close-modal">×</span>
+                <h2>Change Username</h2>
+                <form>
+                    <label>Current Password</label>
+                    <input type="password" placeholder="password" id="currentPassForUsername" required>
+
+                    <label>New Username</label>
+                    <input type="text" placeholder="name" id="newUsername" required>
+
+                    <p class="error-message" style="color:#dc2626; margin:10px 0;"></p>
+
+                    <button type="submit" class="btn-primary">Update Username</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="modal" id="passwordModal">
+            <div class="modal-content">
+                <span class="close-modal">×</span>
+                <h2>Change Password</h2>
+                <form>
+                    <label>Current Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="currentPassword" placeholder="current password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+
+                    <label>New Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="newPassword" placeholder="new password" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+
+                    <label>Confirm New Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="confirmPassword" placeholder="confirm" required>
+                        <i class="fas fa-eye toggle-password"></i>
+                    </div>
+
+                    <p class="error-message" style="color:#dc2626; margin:10px 0;"></p>
+
+                    <button type="submit" class="btn-primary">Update Password</button>
+                </form>
+            </div>
+        </div>
+
     </div>
 
-</div>
+    <footer>
+        <div class="footer-content">
+            <h3>Contact us</h3>
+            <div class="contact-item"><i class="fas fa-phone"></i> +251 987 536 423</div>
+            <div class="contact-item"><i class="fas fa-envelope"></i> aastu@gmail.com</div>
 
-<footer>
-    <div class="footer-content">
-        <h3>Contact us</h3>
-        <div class="contact-item"><i class="fas fa-phone"></i> +251 987 536 423</div>
-        <div class="contact-item"><i class="fas fa-envelope"></i> aastu@gmail.com</div>
+            <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="footer-logo">
 
-        <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="footer-logo">
-
-        <div style="margin-top: 40px; opacity: 0.8; font-size: 0.95rem;">
-            © 2025 Student Portal. All rights reserved.
+            <div style="margin-top: 40px; opacity: 0.8; font-size: 0.95rem;">
+                © 2025 Student Portal. All rights reserved.
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<script src="../scripts/settings.js"></script>
+    <script src="../scripts/settings.js"></script>
 </body>
+
 </html>

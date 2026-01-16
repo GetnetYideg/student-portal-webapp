@@ -1,99 +1,111 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AASTU Student Portal</title>
+    <link rel="icon" type="image/jpg" href="images/favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/shared.css">
     <script src="scripts/rollingBackground.js"></script>
+    <script src="scripts/menu.js" defer></script>
 </head>
+
 <body>
 
-<header>
-    <div class="nav-container">
-        <img src="images/AASTU-LOGO.png" alt="AASTU" class="logo">
-        <nav>
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">LOGIN</a>
-                    <div class="dropdown-content">
-                        <a href="login.html">As Student</a>
-                        <a href="lecture-login.html">As Instructor</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <header>
+        <div class="nav-container">
+            <img src="images/AASTU-LOGO.png" alt="AASTU" class="logo">
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">LOGIN</a>
+                        <div class="dropdown-content">
+                            <a href="login.html">As Student</a>
+                            <a href="lecture-login.html">As Instructor</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<section class="hero">
-    <div class="hero-content">
-        <h1>Your Academic Life, Organized in One Place</h1>
-        <p>Access courses, grades, schedules, and announcements—all from a single, easy-to-use student portal designed to keep you on track.</p>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Your Academic Life, Organized in One Place</h1>
+            <p>Access courses, grades, schedules, and announcements—all from a single, easy-to-use student portal
+                designed to keep you on track.</p>
 
-        <div style="margin: 40px 0;">
-            <span id="leftSlider" class="slider-arrows" onclick=moveLeft()><</span>
-            <a href="about.html" class="read-more-btn">READ MORE</a>
-            <span id="rightSlider" class="slider-arrows">></span>
-        </div>
+            <div style="margin: 40px 0;">
+                <span id="leftSlider" class="slider-arrows" onclick=moveLeft()><</span>
+                        <a href="about.html" class="read-more-btn">READ MORE</a>
+                        <span id="rightSlider" class="slider-arrows">></span>
+            </div>
 
-        <div style="margin-top: 30px; font-size: 2.2rem; opacity: 0.7;">
-            • • •
+            <div style="margin-top: 30px; font-size: 2.2rem; opacity: 0.7;">
+                • • •
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="what-section">
-    <div class="what-content">
-        <div class="what-text">
-            <h2>What does this platform do?<br><small>For students...</small></h2>
-            <p>The portal will help students get quick access to marks and announcements in one place, reducing missed info and confusion.</p>
-            <a href="#" class="read-more-btn" style="margin-top: 30px;">READ MORE</a>
+    <section class="what-section">
+        <div class="what-content">
+            <div class="what-text">
+                <h2>What does this platform do?<br><small>For students...</small></h2>
+                <p>The portal will help students get quick access to marks and announcements in one place, reducing
+                    missed info and confusion.</p>
+                <a href="#" class="read-more-btn" style="margin-top: 30px;">READ MORE</a>
+            </div>
+            <div class="illustration">
+                <img src="images/image copy.png" alt="Students working together">
+            </div>
         </div>
-        <div class="illustration">
-            <img src="images/image copy.png" alt="Students working together">
-        </div>
-    </div>
-</section>
+    </section>
 
-<section class="feuture-container">
-    <h2 class="section-title">Features</h2>
-    <div class="features-grid">
-        <div class="feature-card">
-            <h3>Centralized Academic Dashboard</h3>
-            <p>View grades, course details, and announcements in one organized dashboard without switching between multiple platforms.</p>
+    <section class="feuture-container">
+        <h2 class="section-title">Features</h2>
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>Centralized Academic Dashboard</h3>
+                <p>View grades, course details, and announcements in one organized dashboard without switching between
+                    multiple platforms.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Real-Time Announcements</h3>
+                <p>Receive important academic updates instantly, ensuring you never miss deadlines, exams, or course
+                    changes.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Secure Grade Management</h3>
+                <p>Instructors can publish grades safely, and students can access their results privately and accurately
+                    at any time.</p>
+            </div>
         </div>
-        <div class="feature-card">
-            <h3>Real-Time Announcements</h3>
-            <p>Receive important academic updates instantly, ensuring you never miss deadlines, exams, or course changes.</p>
-        </div>
-        <div class="feature-card">
-            <h3>Secure Grade Management</h3>
-            <p>Instructors can publish grades safely, and students can access their results privately and accurately at any time.</p>
-        </div>
-    </div>
-</section>
+    </section>
 
-<footer>
-    <div class="footer-content">
-        <h3>Contact us</h3>
-        <div class="contact-info">
-            <div class="contact-item"><i class="fas fa-phone"></i> +251 987 536 423</div>
-            <div class="contact-item"><i class="fas fa-envelope"></i> aastu@gmail.com</div>
-        </div>
+    <footer>
+        <div class="footer-content">
+            <h3>Contact us</h3>
+            <div class="contact-info">
+                <div class="contact-item"><i class="fas fa-phone"></i> +251 987 536 423</div>
+                <div class="contact-item"><i class="fas fa-envelope"></i> aastu@gmail.com</div>
+            </div>
 
-        <img src="images/AASTU-LOGO.png" alt="AASTU Logo" class="footer-logo">
+            <img src="images/AASTU-LOGO.png" alt="AASTU Logo" class="footer-logo">
 
-        <div class="copyright">
-            © 2025 Student Portal. All rights reserved.
+            <div class="copyright">
+                © 2025 Student Portal. All rights reserved.
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 </body>
+
 </html>

@@ -1,89 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>AASTU – Submit Grades – Spreadsheet View</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AASTU Student Portal - Submit Grade</title>
+    <link rel="icon" type="image/jpg" href="../images/favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="../styles/shared.css">
+    <script src="../scripts/menu.js" defer></script>
     <link rel="stylesheet" href="../styles/submit-grade.css">
 </head>
+
 <body>
 
-<header>
-    <div class="nav-container">
-        <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="lecture-dashboard.html">Dash Board</a></li>
-                <li><a href="lecture-anouncement.html">Announcement</a></li>
-                <li><a href="#" class="active">Submit Grade</a></li>
-                <li><a href="lecture-profile.html">Profile</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <header>
+        <div class="nav-container">
+            <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="logo">
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="lecture-dashboard.html">Dash Board</a></li>
+                    <li><a href="lecture-anouncement.html">Announcement</a></li>
+                    <li><a href="#" class="active">Submit Grade</a></li>
+                    <li><a href="lecture-profile.html">Profile</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-<section class="page-header">
-    <h1>Grade Entry – SWEG432</h1>
-    <p>Fundamentals of Programming</p>
-</section>
+    <section class="page-header">
+        <h1>Grade Entry – SWEG432</h1>
+        <p>Fundamentals of Programming</p>
+    </section>
 
-<div class="main">
+    <div class="main">
 
-    <div class="toolbar">
-        <div class="course-title">
-            SWEG432 – Fundamentals of Programming
+        <div class="toolbar">
+            <div class="course-title">
+                SWEG432 – Fundamentals of Programming
+            </div>
+
+            <div>
+                <select id="section">
+                    <option value="A">Section A</option>
+                    <option value="B">Section B</option>
+                </select>
+            </div>
+
+            <button class="btn-save" id="saveBtn">Save All Grades</button>
         </div>
 
-        <div>
-            <select id="section">
-                <option value="A">Section A</option>
-                <option value="B">Section B</option>
-            </select>
+        <div class="success" id="successMsg">
+            <i class="fas fa-check-circle"></i> Grades saved successfully
         </div>
 
-        <button class="btn-save" id="saveBtn">Save All Grades</button>
-    </div>
-
-    <div class="success" id="successMsg">
-        <i class="fas fa-check-circle"></i> Grades saved successfully
-    </div>
-
-    <div class="table-wrapper">
-        <table id="gradeTable">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Mid<br>30%</th>
-                    <th>Assign<br>20%</th>
-                    <th>Final<br>50%</th>
-                    <th>Sum</th>
-                    <th>Letter</th>
-                </tr>
-            </thead>
-            <tbody id="gradeBody"></tbody>
-        </table>
-    </div>
-
-</div>
-<footer>
-    <div class="footer-content">
-        <h3>Contact us</h3>
-        <div class="contact-item"><i class="fas fa-phone"></i> +251 987 536 423</div>
-        <div class="contact-item"><i class="fas fa-envelope"></i> aastu@gmail.com</div>
-
-        <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="footer-logo">
-
-        <div style="margin-top: 40px; opacity: 0.8; font-size: 0.95rem;">
-            © 2025 Student Portal. All rights reserved.
+        <div class="table-wrapper">
+            <table id="gradeTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Mid<br>30%</th>
+                        <th>Assign<br>20%</th>
+                        <th>Final<br>50%</th>
+                        <th>Sum</th>
+                        <th>Letter</th>
+                    </tr>
+                </thead>
+                <tbody id="gradeBody"></tbody>
+            </table>
         </div>
-    </div>
-</footer>
 
-<script src="../scripts/submitGrade.js"></script>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <h3>Contact us</h3>
+            <div class="contact-item"><i class="fas fa-phone"></i> +251 987 536 423</div>
+            <div class="contact-item"><i class="fas fa-envelope"></i> aastu@gmail.com</div>
+
+            <img src="../images/AASTU-LOGO.png" alt="AASTU Logo" class="footer-logo">
+
+            <div style="margin-top: 40px; opacity: 0.8; font-size: 0.95rem;">
+                © 2025 Student Portal. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="../scripts/submitGrade.js"></script>
 
 </body>
 

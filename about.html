@@ -1,94 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AASTU Student Portal - About Us</title>
+    <link rel="icon" type="image/jpg" href="images/favicon.jpg">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="styles/about.css">
     <link rel="stylesheet" href="styles/shared.css">
+    <script src="scripts/menu.js" defer></script>
 </head>
+
 <body>
 
-<header>
-    <div class="nav-container">
-        <img src="images/AASTU-LOGO.png" alt="AASTU Logo" class="logo">
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="#" class="active">About Us</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">LOGIN</a>
-                    <div class="dropdown-content">
-                        <a href="login.html">As Student</a>
-                        <a href="lecture-login.html">As Instructor</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</header>
-
-<section class="hero">
-    <div class="hero-content">
-        <div class="hero-text">
-            <h1>AASTU's Student Portal</h1>
-            <h2>Your Academic Journey, Simplified</h2>
+    <header>
+        <div class="nav-container">
+            <img src="images/AASTU-LOGO.png" alt="AASTU Logo" class="logo">
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="#" class="active">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">LOGIN</a>
+                        <div class="dropdown-content">
+                            <a href="login.html">As Student</a>
+                            <a href="lecture-login.html">As Instructor</a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <div class="hero-image">
-            <img src="images/about-image.png" alt="Student using portal">
-        </div>
-    </div>
-</section>
+    </header>
 
-<section class="section what-section">
-    <div class="section">
-        <div class="what-content">
-            <div class="what-left">
-                <h2>What is this platform about?</h2>
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1>AASTU's Student Portal</h1>
+                <h2>Your Academic Journey, Simplified</h2>
             </div>
-            <div class="what-right">
-                <p>This platform centralizes grades, announcements, and course information in one place, making it easier for students and instructors to stay organized and informed.</p>
+            <div class="hero-image">
+                <img src="images/about-image.png" alt="Student using portal">
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="section problems-section">
-    <div class="section">
-        <h2 style="text-align: center; font-size: 2.6rem;">Problems that it solves</h2>
-        <div class="problems-grid">
-            <div class="problem-card">
-                <h3>Scattered academic information</h3>
-                <p>Students often miss grades or announcements because information is shared across emails, messaging apps, and notice boards. This platform solves this by centralizing everything in one place.</p>
-            </div>
-            <div class="problem-card">
-                <h3>Delayed or unclear communication</h3>
-                <p>Important updates are sometimes sent late or without clear context. This platform provides timely, organized announcements that everyone can access easily.</p>
-            </div>
-            <div class="problem-card">
-                <h3>Inefficient grade publishing</h3>
-                <p>Instructors rely on manual or informal methods to share results, which can cause errors and confusion. This platform allows instructors to publish grades securely and consistently in one system.</p>
+    <section class="section what-section">
+        <div class="section">
+            <div class="what-content">
+                <div class="what-left">
+                    <h2>What is this platform about?</h2>
+                </div>
+                <div class="what-right">
+                    <p>This platform centralizes grades, announcements, and course information in one place, making it
+                        easier for students and instructors to stay organized and informed.</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<footer>
-    <div class="footer-content">
-        <h3>Contact us</h3>
-        <div class="contact-info">
-            <div class="contact-item"><i class="fas fa-phone"></i> +251 987 536 423</div>
-            <div class="contact-item"><i class="fas fa-envelope"></i> aastu@gmail.com</div>
+    <section class="section problems-section">
+        <div class="section">
+            <h2 style="text-align: center; font-size: 2.6rem;">Problems that it solves</h2>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <h3>Scattered academic information</h3>
+                    <p>Students often miss grades or announcements because information is shared across emails,
+                        messaging apps, and notice boards. This platform solves this by centralizing everything in one
+                        place.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Delayed or unclear communication</h3>
+                    <p>Important updates are sometimes sent late or without clear context. This platform provides
+                        timely, organized announcements that everyone can access easily.</p>
+                </div>
+                <div class="problem-card">
+                    <h3>Inefficient grade publishing</h3>
+                    <p>Instructors rely on manual or informal methods to share results, which can cause errors and
+                        confusion. This platform allows instructors to publish grades securely and consistently in one
+                        system.</p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <img src="images/AASTU-LOGO.png" alt="AASTU Logo" class="footer-logo">
+    <footer>
+        <div class="footer-content">
+            <h3>Contact us</h3>
+            <div class="contact-info">
+                <div class="contact-item"><i class="fas fa-phone"></i> +251 987 536 423</div>
+                <div class="contact-item"><i class="fas fa-envelope"></i> aastu@gmail.com</div>
+            </div>
 
-        <div class="copyright">
-            © 2025 Student Portal. All rights reserved.
+            <img src="images/AASTU-LOGO.png" alt="AASTU Logo" class="footer-logo">
+
+            <div class="copyright">
+                © 2025 Student Portal. All rights reserved.
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
 </body>
+
 </html>

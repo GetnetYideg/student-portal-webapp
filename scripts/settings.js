@@ -1,12 +1,12 @@
-const changeUsernameBtn  = document.getElementById('changeUsernameBtn');
-const changePasswordBtn  = document.getElementById('changePasswordBtn');
+const changeUsernameBtn = document.getElementById('changeUsernameBtn');
+const changePasswordBtn = document.getElementById('changePasswordBtn');
 
-const usernameModal      = document.getElementById('usernameModal');
-const passwordModal      = document.getElementById('passwordModal');
+const usernameModal = document.getElementById('usernameModal');
+const passwordModal = document.getElementById('passwordModal');
 
-const closeButtons       = document.querySelectorAll('.close-modal');
+const closeButtons = document.querySelectorAll('.close-modal');
 
-const currentUsernameEl  = document.querySelector('.username-display');
+const currentUsernameEl = document.querySelector('.username-display.user-name'); // Specific class added in session.js integration
 
 function openModal(modal) {
     modal.style.display = 'flex';
@@ -41,6 +41,14 @@ changeUsernameBtn?.addEventListener('click', () => {
 
         const newUsername = newUsernameInput.value.trim();
         const currentPass = currentPassInput.value.trim();
+        const userJson = localStorage.getItem('currentUser');
+
+        if (!userJson) {
+            errorEl.textContent = "Session invalid. Please login again.";
+            return;
+        }
+
+        const currentUser = JSON.parse(userJson);
 
         if (!newUsername) {
             errorEl.textContent = "Please enter a new username";
@@ -55,8 +63,26 @@ changeUsernameBtn?.addEventListener('click', () => {
             return;
         }
 
-        // Simulate successful change (in real app → send to backend)
-        currentUsernameEl.textContent = newUsername;
+        // Validate Password
+        if (currentUser.password !== currentPass) {
+            errorEl.textContent = "Incorrect password";
+            return;
+        }
+
+        // Update User Data
+        currentUser.name = newUsername;
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+
+        // Update UI
+        // Trigger loadUserData() functionality if possible, or manually update common fields
+        // Since loadUserData is in session.js and global, we can try re-running it or just update specific fields
+        if (typeof loadUserData === 'function') {
+            loadUserData();
+        } else {
+            const nameElements = document.querySelectorAll('.user-name, #welcome-name');
+            nameElements.forEach(el => el.textContent = newUsername);
+        }
+
         errorEl.textContent = "";
         alert("Username updated successfully!");
         closeModal(usernameModal);
@@ -70,9 +96,9 @@ changePasswordBtn?.addEventListener('click', () => {
 
     const form = passwordModal.querySelector('form');
     const currentPass = form.querySelector('#currentPassword');
-    const newPass     = form.querySelector('#newPassword');
+    const newPass = form.querySelector('#newPassword');
     const confirmPass = form.querySelector('#confirmPassword');
-    const errorEl     = form.querySelector('.error-message');
+    const errorEl = form.querySelector('.error-message');
 
     // Show/hide password toggle
     const toggleIcons = form.querySelectorAll('.toggle-password');
@@ -89,10 +115,24 @@ changePasswordBtn?.addEventListener('click', () => {
     form.onsubmit = e => {
         e.preventDefault();
 
+        const userJson = localStorage.getItem('currentUser');
+        if (!userJson) {
+            errorEl.textContent = "Session invalid. Please login again.";
+            return;
+        }
+
+        const currentUser = JSON.parse(userJson);
+
         if (!currentPass.value) {
             errorEl.textContent = "Please enter your current password";
             return;
         }
+        // Validate Current Password
+        if (currentUser.password !== currentPass.value) {
+            errorEl.textContent = "Incorrect current password";
+            return;
+        }
+
         if (!newPass.value || newPass.value.length < 8) {
             errorEl.textContent = "New password must be at least 8 characters";
             return;
@@ -102,9 +142,14 @@ changePasswordBtn?.addEventListener('click', () => {
             return;
         }
 
+        // Update Password
+        currentUser.password = newPass.value;
+        localStorage.setItem('currentUser', JSON.stringify(currentUser));
+
         errorEl.textContent = "";
         alert("Password changed successfully!");
         closeModal(passwordModal);
         form.reset();
     };
 });
+

@@ -30,13 +30,8 @@ const instructors = [
     { name: "Dr. Solomon Demeke", id: "EDI005/00", password: "password123", email: "solomon.demeke@aastu.edu.et", department: "Chemical Engineering", role: "instructor" }
 ];
 
-// Validation Function
 function validateLogin(usernameOrEmail, id, password, role) {
     const database = role === 'student' ? students : instructors;
-
-    // Simplification logic (checking both username/email field against name or email)
-    // In a real app, strict field matching is better. 
-    // Here we check if the input matches either Name or Email, AND ID matches, AND Password matches.
 
     return database.find(user =>
         (user.email.toLowerCase() === usernameOrEmail.toLowerCase() || user.name.toLowerCase() === usernameOrEmail.toLowerCase()) &&
@@ -45,7 +40,6 @@ function validateLogin(usernameOrEmail, id, password, role) {
     );
 }
 
-// Handle Login Submission
 function handleLogin(event, role) {
     event.preventDefault();
 
@@ -66,7 +60,6 @@ function handleLogin(event, role) {
     const user = validateLogin(username, id, password, role);
 
     if (user) {
-        // Successful Login
         localStorage.setItem('currentUser', JSON.stringify(user));
 
         if (role === 'student') {
@@ -75,7 +68,6 @@ function handleLogin(event, role) {
             window.location.href = 'instructurePages/lecture-dashboard.html';
         }
     } else {
-        // Failed Login
         if (errorMsg) {
             errorMsg.textContent = "User not registered or incorrect credentials.";
             errorMsg.style.display = 'block';

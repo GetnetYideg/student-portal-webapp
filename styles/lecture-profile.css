@@ -4,7 +4,7 @@
     --back-white: white;
     --dark-blue: linear-gradient(135deg, #0f2b5e 0%, #1a3c7a 100%);
 }
-/* Profile Header */
+
 .profile-header {
     background: var(--dark-blue);
     color: var(--text-white);
@@ -47,7 +47,6 @@
     margin: 8px 0;
 }
 
-/* Main Content */
 .main-content {
     max-width: 1200px;
     margin: 60px auto;
@@ -95,7 +94,6 @@
     min-width: 140px;
 }
 
-/* Settings Section */
 .settings-section {
     margin-top: 60px;
 }
@@ -145,8 +143,6 @@
     text-align: center;
 }
 
-
-/* Modal Styles */
 .modal {
     display: none;
     position: fixed;

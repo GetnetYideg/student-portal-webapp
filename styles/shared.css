@@ -21,7 +21,6 @@ body {
     background: var(--body-background);
 }
 
-/* Header */
 header {
     background: var(--header-white);
     padding: 15px 5%;
@@ -95,7 +94,6 @@ nav a.active {
     z-index: 1;
     border-radius: 5px;
     right: 0;
-    /* Align to right so it doesn't overflow */
     top: 100%;
 }
 
@@ -151,18 +149,6 @@ footer {
     font-size: 0.95rem;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --gold-color: #2a2929;
-        --body-background: #1a1a1a;
-        --body-color: #f8f9fa;
-        --header-white: #111;
-        --footer-background: #0f2b5e;
-        --hover-color: #191919;
-    }
-}
-
-/* Hamburger Menu */
 .hamburger {
     display: none;
     background: none;
@@ -177,82 +163,75 @@ footer {
     .hamburger {
         display: block;
         margin-left: auto;
-        /* Ensure it pushes to the right if flex properties behave oddly */
     }
-
-    /* Position the hamburger in the nav container */
+    
     .nav-container {
         position: relative;
     }
-
+    
     nav {
-        /* Ensure nav doesn't take layout space affecting flex distribution, 
-           or explicitly handle it if needed. 
-           With nav ul absolute, nav might be 0x0 or take minimal space. 
-           Let's rely on absolute positioning of UL relative to container.
-        */
         position: static;
     }
-
+    
     nav ul {
         display: none;
         flex-direction: column;
         position: absolute;
         top: 100%;
-        /* Below header */
         right: 0;
-        /* Right aligned */
         left: auto;
-        /* Override default/previous if any */
         width: 250px;
-        /* Fixed width */
         background-color: var(--header-white);
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-        /* More pronounced shadow */
         padding: 20px 0;
         row-gap: 20px;
         z-index: 999;
         border-radius: 0 0 8px 8px;
-        /* Slight rounded corners at bottom */
         margin-top: 15px;
-        /* Slight gap from the header line */
     }
-
+    
     nav ul.active {
         display: flex;
     }
-
-    /* Adjust dropdown for mobile */
+    
     .dropdown-content {
         position: static;
         box-shadow: none;
         background-color: rgba(0, 0, 0, 0.03);
-        /* Slight contrast for submenu */
         padding-left: 0;
         display: none;
         width: 100%;
     }
-
+    
     .dropdown:hover .dropdown-content {
         display: block;
     }
-
+    
     .dropdown {
         width: 100%;
         text-align: center;
     }
-
+    
     nav a {
         display: block;
         width: 100%;
         text-align: center;
         padding: 12px 15px;
-        /* Larger touch targets */
     }
-
-    /* Arrow for dropdown to indicate it has children */
+    
     .dropbtn::after {
         content: ' ▼';
         font-size: 0.8em;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --gold-color: #2a2929;
+        --body-background: #1a1a1a;
+        --body-color: #f8f9fa;
+        --header-white: #111;
+        --footer-background: #0f2b5e;
+        --hover-color: #191919;
     }
 }

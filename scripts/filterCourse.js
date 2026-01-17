@@ -52,13 +52,11 @@ const courses = [
     }
 ];
 
-// DOM elements
 const coursesContainer = document.getElementById('coursesContainer');
 const noResults = document.getElementById('noResults');
 const semesterFilter = document.getElementById('semesterFilter');
 const searchInput = document.getElementById('searchInput');
 
-// Render courses
 function renderCourses(filteredCourses) {
     coursesContainer.innerHTML = '';
 
@@ -90,19 +88,16 @@ function renderCourses(filteredCourses) {
     });
 }
 
-// Filter function
 function filterCourses() {
     const semester = semesterFilter.value;
     const searchTerm = searchInput.value.toLowerCase().trim();
 
     let filtered = courses;
 
-    // Semester filter
     if (semester) {
         filtered = filtered.filter(c => c.semester === semester);
     }
 
-    // Search filter
     if (searchTerm) {
         filtered = filtered.filter(c => 
             c.name.toLowerCase().includes(searchTerm) ||
@@ -114,9 +109,7 @@ function filterCourses() {
     renderCourses(filtered);
 }
 
-// Event listeners
 semesterFilter.addEventListener('change', filterCourses);
 searchInput.addEventListener('input', filterCourses);
 
-// Initial render
 renderCourses(courses);

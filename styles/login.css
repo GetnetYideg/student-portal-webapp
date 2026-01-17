@@ -28,7 +28,6 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Left Side - Welcome Banner */
 .left-side {
     flex: 1;
     background: var(--dark-blue);
@@ -60,7 +59,6 @@ body {
     max-width: 280px;
 }
 
-/* Right Side - Login Form */
 .right-side {
     flex: 1;
     background: var(--back-white);

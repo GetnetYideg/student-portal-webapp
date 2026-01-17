@@ -4,7 +4,7 @@
     --back-white: white;
     --dark-blue: linear-gradient(135deg, #0f2b5e 0%, #1a3c7a 100%);
 }
-/* Welcome Header */
+
 .welcome-header {
     background: var(--dark-blue);
     color: var(--text-white);
@@ -47,7 +47,6 @@
     margin: 8px 0;
 }
 
-/* Main Dashboard Content */
 .dashboard-content {
     max-width: 1200px;
     margin: 30px auto 60px;
@@ -115,7 +114,6 @@
     transform: translateY(-3px);
 }
 
-/* Announcements */
 .announcements-section {
     margin-top: 60px;
 }

@@ -62,20 +62,12 @@ changeUsernameBtn?.addEventListener('click', () => {
             errorEl.textContent = "Please enter your current password";
             return;
         }
-
-        // Validate Password
         if (currentUser.password !== currentPass) {
             errorEl.textContent = "Incorrect password";
             return;
         }
-
-        // Update User Data
         currentUser.name = newUsername;
         localStorage.setItem('currentUser', JSON.stringify(currentUser));
-
-        // Update UI
-        // Trigger loadUserData() functionality if possible, or manually update common fields
-        // Since loadUserData is in session.js and global, we can try re-running it or just update specific fields
         if (typeof loadUserData === 'function') {
             loadUserData();
         } else {
@@ -100,7 +92,6 @@ changePasswordBtn?.addEventListener('click', () => {
     const confirmPass = form.querySelector('#confirmPassword');
     const errorEl = form.querySelector('.error-message');
 
-    // Show/hide password toggle
     const toggleIcons = form.querySelectorAll('.toggle-password');
     toggleIcons.forEach(icon => {
         icon.onclick = () => {
@@ -127,7 +118,6 @@ changePasswordBtn?.addEventListener('click', () => {
             errorEl.textContent = "Please enter your current password";
             return;
         }
-        // Validate Current Password
         if (currentUser.password !== currentPass.value) {
             errorEl.textContent = "Incorrect current password";
             return;
@@ -142,7 +132,6 @@ changePasswordBtn?.addEventListener('click', () => {
             return;
         }
 
-        // Update Password
         currentUser.password = newPass.value;
         localStorage.setItem('currentUser', JSON.stringify(currentUser));
 

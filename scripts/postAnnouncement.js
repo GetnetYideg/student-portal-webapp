@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Get current user info or default
             let publisherName = "Me (Instructor)";
             const userJson = localStorage.getItem('currentUser');
             if (userJson) {
@@ -19,19 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 publisherName = user.name + (user.role === 'instructor' ? '' : ''); // Add title if needed
             }
 
-            // Create Date String
             const now = new Date();
             const dateStr = now.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
             const timeStr = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
 
-            // Create Announcement HTML Structure
             const newCard = document.createElement('div');
             newCard.className = 'announcement-card';
-
-            // For simplicity, we can use a generic title or ask for one. 
-            // The current UI only has a textarea. Let's assume the first few words are the title 
-            // or just use a generic "New Announcement".
-            // Let's split by newline to see if user put a title.
 
             const lines = content.split('\n');
             let title = "Recent Update";
@@ -60,14 +52,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
             `;
-
-            // Prepend or Append? User asked "appear below". 
-            // Usually "below" means appended to the list, or "below the input box" which is the top of the list.
-            // "appear below" in context of "after i click add... appear below" likely means appear in the list below the input area.
-            // Standard feed behavior is newest on top. I will prepend it to the key container so it's immediately below the input area.
             announcementsGrid.prepend(newCard);
 
-            // Clear input
             textarea.value = '';
         });
     }

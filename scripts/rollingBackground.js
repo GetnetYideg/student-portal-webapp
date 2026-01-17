@@ -6,7 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "images/img3.png",
         "images/img4.png",
         "images/img5.png",
-        // "images/img6.png",
     ];
     const hero = document.querySelector(".hero");
     const left = document.getElementById("leftSlider");

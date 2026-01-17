@@ -34,22 +34,12 @@
 }
 
 .hero p {
-  /* height: 100vh; */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   transition: background-image 1s ease-in-out;
   position: relative;
 }
-
-/* .hero-content {
-  font-size: 1.3rem;
-  max-width: 780px;
-  margin: 0 auto 2.5rem;
-  opacity: 0.92;
-  text-align: center;
-} */
-
 
 .slider-arrows {
     font-size: 3.5rem;
@@ -78,7 +68,6 @@
     box-shadow: 0 0px 15px rgba(255, 151, 59, 0.35);
 }
 
-/* Features / Cards Section */
 .section-title {
     text-align: center;
     font-size: 2.4rem;
@@ -120,7 +109,6 @@
     font-size: 1.05rem;
 }
 
-/* What does this platform do? */
 .what-section {
     background: var(--back-section);
     padding: 100px 5%;

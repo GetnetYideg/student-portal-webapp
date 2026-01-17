@@ -73,7 +73,6 @@ function updateRow(tr) {
     const final  = Number(tr.querySelector('[data-type="final"]')?.textContent)  || 0;
 
     const sum    = (mid + assign + final).toFixed(0);
-    const weighted = (mid*0.3 + assign*0.2 + final*0.5).toFixed(1);
     const letter = getLetter(sum);
 
     tr.querySelector('.sum-cell').textContent = sum;
